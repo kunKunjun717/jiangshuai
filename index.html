@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
 <head>
-  <title>½¯Ë§</title>
+  <meta charset="UTF-8"> <!-- å¼ºåˆ¶å£°æ˜UTF-8ç¼–ç  -->
+  <title>è’‹å¸…</title>
   <style>
     * {
       padding: 0;
       margin: 0;
+      font-family: "Microsoft YaHei", "SimHei", "Arial", sans-serif; /* ç»Ÿä¸€å­—ä½“æ ·å¼ */
     }
     html,
     body {
       height: 100%;
       padding: 0;
       margin: 0;
-      background: #000; /* ÉèÖÃ±³¾°ÑÕÉ«ÎªºÚÉ« */
+      background: #000; /* è®¾ç½®èƒŒæ™¯é¢œè‰²ä¸ºé»‘è‰² */
     }
     canvas {
       position: absolute;
@@ -25,7 +29,7 @@
       width: 100%;
       text-align: center;
       font-size: 24px;
-      color: #ff69b4; /* °®ĞÄÑÕÉ« */
+      color: #ff69b4; /* çˆ±å¿ƒé¢œè‰² */
     }
     .credit {
       position: fixed;
@@ -37,23 +41,23 @@
   </style>
 </head>
 <body>
-  <div class="text">ÎÒÆ¦Âğ</div>
+  <div class="text">æˆ‘ç—å—</div>
   <canvas id="pinkboard"></canvas>
   <div class="credit">2024/10/9</div>
 
   <script>
       var settings = {
           particles: {
-              length: 800, // ×î´óÁ£×ÓÊıÁ¿
-              duration: 3, // Á£×Ó³ÖĞøÊ±¼ä£¨Ãë£©
-              velocity: 150, // Á£×ÓËÙ¶È£¨ÏñËØ/Ãë£©
-              effect: -0.75, // µ÷ÕûĞ§¹ûÒÔ»ñµÃ¸üºÃµÄĞ§¹û
-              size: 40 // Á£×Ó´óĞ¡£¨ÏñËØ£©
+              length: 800, // æœ€å¤§ç²’å­æ•°é‡
+              duration: 3, // ç²’å­æŒç»­æ—¶é—´ï¼ˆç§’ï¼‰
+              velocity: 150, // ç²’å­é€Ÿåº¦ï¼ˆåƒç´ /ç§’ï¼‰
+              effect: -0.75, // è°ƒæ•´æ•ˆæœä»¥è·å¾—æ›´å¥½çš„æ•ˆæœ
+              size: 40 // ç²’å­å¤§å°ï¼ˆåƒç´ ï¼‰
           },
           textParticles: {
-              length: 200, // ×î´óÎÄ±¾Á£×ÓÊıÁ¿
-              duration: 5, // ÎÄ±¾Á£×Ó³ÖĞøÊ±¼ä£¨Ãë£©
-              velocity: 100 // ÎÄ±¾Á£×ÓËÙ¶È£¨ÏñËØ/Ãë£©
+              length: 200, // æœ€å¤§æ–‡æœ¬ç²’å­æ•°é‡
+              duration: 5, // æ–‡æœ¬ç²’å­æŒç»­æ—¶é—´ï¼ˆç§’ï¼‰
+              velocity: 100 // æ–‡æœ¬ç²’å­é€Ÿåº¦ï¼ˆåƒç´ /ç§’ï¼‰
           }
       };
 
@@ -172,7 +176,7 @@
           TextParticle.prototype.draw = function (context) {
               context.globalAlpha = 1 - this.age / settings.textParticles.duration;
               context.font = "bold 18px Arial";
-              context.fillStyle = "#8a2be2"; // ÉèÖÃÎÄ±¾ÑÕÉ«Îª×ÏÉ«
+              context.fillStyle = "#8a2be2"; // è®¾ç½®æ–‡æœ¬é¢œè‰²ä¸ºç´«è‰²
               context.textAlign = "center";
               context.textBaseline = "middle";
               context.fillText(this.text, this.position.x, this.position.y);
@@ -335,15 +339,15 @@
                   context.lineTo(point.x, point.y);
               }
               context.closePath();
-              context.fillStyle = "#ff69b4"; // °®ĞÄÑÕÉ«
+              context.fillStyle = "#ff69b4"; // çˆ±å¿ƒé¢œè‰²
               context.fill();
 
-              // Draw text "Íõ×Ïİæ" in the center of the heart
+              // Draw text "ç‹ç´«è±" in the center of the heart
               context.font = "bold 24px Arial";
               context.fillStyle = "#fff";
               context.textAlign = "center";
               context.textBaseline = "middle";
-              context.fillText("½¯Ë§", canvas.width / 2, canvas.height / 2);
+              context.fillText("è’‹å¸…", canvas.width / 2, canvas.height / 2);
 
               var image = new Image();
               image.src = canvas.toDataURL();
@@ -391,7 +395,7 @@
             textDir.x,
             textDir.y,
             "yht"
-          ); // Ìí¼ÓÎÄ±¾Á£×Ó
+          ); // æ·»åŠ æ–‡æœ¬ç²’å­
               }
 
               textParticles.update(deltaTime);
